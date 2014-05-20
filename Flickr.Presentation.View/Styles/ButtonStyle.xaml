@@ -1,0 +1,138 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="Brushes.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <LinearGradientBrush x:Key="NormalButtonBrush"
+                         StartPoint="0.5,0"
+                         EndPoint="0.5,1">
+        <GradientStop Color="#434447"
+                      Offset="0" />
+        <GradientStop Color="#313234"
+                      Offset="1" />
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="NormalButtonGlowBrush"
+                     Color="#56575a" />
+
+    <LinearGradientBrush x:Key="MouseOverButtonBrush"
+                         StartPoint="0.5,0"
+                         EndPoint="0.5,1">
+        <GradientStop Color="#58595d"
+                      Offset="0" />
+        <GradientStop Color="#444548"
+                      Offset="1" />
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="MouseOverButtonGlowBrush"
+                     Color="#696a6e" />
+
+    <LinearGradientBrush x:Key="PressedButtonBrush"
+                         StartPoint="0.5,0"
+                         EndPoint="0.5,1">
+        <GradientStop Color="#1f2021"
+                      Offset="0" />
+        <GradientStop Color="#1d1e1f"
+                      Offset="1" />
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="PressedButtonGlowBrush"
+                     Color="Black" />
+
+    <SolidColorBrush x:Key="ButtonBorderBrush"
+                     Color="#1a1a1a" />
+
+    <Style x:Key="DarkButtonStyle"
+           TargetType="Button">
+        <Setter Property="BorderThickness"
+                Value="1" />
+        <Setter Property="BorderBrush"
+                Value="{StaticResource ButtonBorderBrush}" />
+        <Setter Property="Background"
+                Value="{StaticResource NormalButtonBrush}" />
+        <Setter Property="Foreground"
+                Value="White" />
+        <Setter Property="FontWeight"
+                Value="Bold" />
+        <Setter Property="HorizontalAlignment"
+                Value="Center" />
+        <Setter Property="VerticalAlignment"
+                Value="Center" />
+        <Setter Property="TextBlock.FontFamily"
+                Value="SegoeUI"/>
+        <Setter Property="TextBlock.Foreground"
+                Value="White" />
+        <Setter Property="TextBlock.FontWeight"
+                Value="SemiBold" />
+        <Setter Property="TextBlock.FontSize"
+                Value="16" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid>
+                        <Border x:Name="_bgBorder"
+                                Background="{StaticResource NormalButtonGlowBrush}"
+                                BorderThickness="1"
+                                BorderBrush="{StaticResource ButtonBorderBrush}"
+                                CornerRadius="3" />
+                        <Border x:Name="_border"
+                                Background="{StaticResource NormalButtonBrush}"
+                                CornerRadius="3"
+                                Margin="1,2,1,1">
+                        </Border>
+
+                        <ContentPresenter x:Name="_contentPresenter"
+                                          Grid.Row="1"
+                                          VerticalAlignment="Center"
+                                          HorizontalAlignment="Center"
+                                          Margin="0,5,0,0">
+                            <ContentPresenter.RenderTransform>
+                                <TranslateTransform Y="-1" />
+                            </ContentPresenter.RenderTransform>
+                        </ContentPresenter>
+
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsMouseOver"
+                                           Value="True" />
+                                <Condition Property="IsEnabled"
+                                           Value="True" />
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="_border"
+                                    Property="Background"
+                                    Value="{StaticResource MouseOverButtonBrush}" />
+                            <Setter TargetName="_bgBorder"
+                                    Property="Background"
+                                    Value="{StaticResource MouseOverButtonGlowBrush}" />
+                        </MultiTrigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsPressed"
+                                           Value="True" />
+                                <Condition Property="IsEnabled"
+                                           Value="True" />
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="_contentPresenter"
+                                    Property="RenderTransform"
+                                    Value="{x:Null}" />
+                            <Setter TargetName="_border"
+                                    Property="Background"
+                                    Value="{StaticResource PressedButtonBrush}" />
+                            <Setter TargetName="_bgBorder"
+                                    Property="Background"
+                                    Value="{StaticResource PressedButtonGlowBrush}" />
+                            <Setter TargetName="_border"
+                                    Property="Margin"
+                                    Value="1,2" />
+                        </MultiTrigger>
+                        <Trigger Property="IsEnabled"
+                                 Value="False">
+                            <Setter Property="Opacity"
+                                    Value="0.5"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

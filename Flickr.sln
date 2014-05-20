@@ -1,0 +1,74 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{436EB912-D5A7-4BC5-93A8-6D85A6E86D33}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flickr.Presentation.View", "Flickr.Presentation.View\Flickr.Presentation.View.csproj", "{238C9384-CF3F-4E7C-A240-662E15E7C89E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C36C2243-B9DF-47CD-806C-99EA31313FFE} = {C36C2243-B9DF-47CD-806C-99EA31313FFE}
+		{88DA46D1-4B8B-40CB-9169-D52501F11B22} = {88DA46D1-4B8B-40CB-9169-D52501F11B22}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flickr.Presentation", "Flickr.Presentation\Flickr.Presentation.csproj", "{C36C2243-B9DF-47CD-806C-99EA31313FFE}"
+	ProjectSection(ProjectDependencies) = postProject
+		{AF3A5A51-9E10-4351-ACE8-81A0075C8218} = {AF3A5A51-9E10-4351-ACE8-81A0075C8218}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flickr.Presentation.Model", "Flickr.Presentation.Model\Flickr.Presentation.Model.csproj", "{AF3A5A51-9E10-4351-ACE8-81A0075C8218}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataService", "DataService", "{20DE2DD3-235E-48C3-8688-EA3A1EAA34D2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flickr.Api.Client", "Flickr.Api.Client\Flickr.Api.Client.csproj", "{2B3671D3-9E8A-4714-B81B-C3993F82D89C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flickr.DataService", "Flickr.DataService\Flickr.DataService.csproj", "{E8C03294-8B71-4E8E-9AF6-72CE951C1279}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flickr.Client", "Flickr.Client\Flickr.Client.csproj", "{2D6234E7-6CA5-426F-9126-F53421A93960}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flickr.Bootstrapping", "Flickr.Bootstrapping\Flickr.Bootstrapping.csproj", "{88DA46D1-4B8B-40CB-9169-D52501F11B22}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{238C9384-CF3F-4E7C-A240-662E15E7C89E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{238C9384-CF3F-4E7C-A240-662E15E7C89E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{238C9384-CF3F-4E7C-A240-662E15E7C89E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{238C9384-CF3F-4E7C-A240-662E15E7C89E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C36C2243-B9DF-47CD-806C-99EA31313FFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C36C2243-B9DF-47CD-806C-99EA31313FFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C36C2243-B9DF-47CD-806C-99EA31313FFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C36C2243-B9DF-47CD-806C-99EA31313FFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF3A5A51-9E10-4351-ACE8-81A0075C8218}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF3A5A51-9E10-4351-ACE8-81A0075C8218}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF3A5A51-9E10-4351-ACE8-81A0075C8218}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF3A5A51-9E10-4351-ACE8-81A0075C8218}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B3671D3-9E8A-4714-B81B-C3993F82D89C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B3671D3-9E8A-4714-B81B-C3993F82D89C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B3671D3-9E8A-4714-B81B-C3993F82D89C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B3671D3-9E8A-4714-B81B-C3993F82D89C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8C03294-8B71-4E8E-9AF6-72CE951C1279}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8C03294-8B71-4E8E-9AF6-72CE951C1279}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8C03294-8B71-4E8E-9AF6-72CE951C1279}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8C03294-8B71-4E8E-9AF6-72CE951C1279}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D6234E7-6CA5-426F-9126-F53421A93960}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D6234E7-6CA5-426F-9126-F53421A93960}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D6234E7-6CA5-426F-9126-F53421A93960}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D6234E7-6CA5-426F-9126-F53421A93960}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88DA46D1-4B8B-40CB-9169-D52501F11B22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88DA46D1-4B8B-40CB-9169-D52501F11B22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88DA46D1-4B8B-40CB-9169-D52501F11B22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88DA46D1-4B8B-40CB-9169-D52501F11B22}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{238C9384-CF3F-4E7C-A240-662E15E7C89E} = {436EB912-D5A7-4BC5-93A8-6D85A6E86D33}
+		{C36C2243-B9DF-47CD-806C-99EA31313FFE} = {436EB912-D5A7-4BC5-93A8-6D85A6E86D33}
+		{AF3A5A51-9E10-4351-ACE8-81A0075C8218} = {436EB912-D5A7-4BC5-93A8-6D85A6E86D33}
+		{2B3671D3-9E8A-4714-B81B-C3993F82D89C} = {20DE2DD3-235E-48C3-8688-EA3A1EAA34D2}
+		{E8C03294-8B71-4E8E-9AF6-72CE951C1279} = {20DE2DD3-235E-48C3-8688-EA3A1EAA34D2}
+	EndGlobalSection
+EndGlobal

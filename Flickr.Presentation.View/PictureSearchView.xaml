@@ -1,0 +1,51 @@
+﻿<Window x:Class="Flickr.Presentation.View.PictureSearchView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="clr-namespace:Flickr.Presentation.ViewModels;assembly=Flickr.Presentation"
+        xmlns:view="clr-namespace:Flickr.Presentation.View"
+        mc:Ignorable="d"
+        d:DataContext="{d:DesignInstance vm:PictureSearchViewModel}">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="CommonResources.xaml"/>
+                <ResourceDictionary Source="Styles/Brushes.xaml"/>
+                <ResourceDictionary Source="Styles/FilterTextBoxStyle.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Window.Background>
+        <StaticResource ResourceKey="MainBackgroundBrush" />
+    </Window.Background>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <ContentControl Grid.Row="0" Grid.Column="0"
+                        Style="{StaticResource InputContentControlStyle}"
+                        Margin="5">
+               <TextBox Text="{Binding SearchTags, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        Style="{StaticResource FilterTextBoxStyle}" HorizontalContentAlignment="Center">
+                   <TextBox.InputBindings>
+                       <KeyBinding Key="Enter" Command="{Binding ForceSearchCommand}" />
+                       <KeyBinding Key="Escape" Command="{Binding ClearSearchCommand}" />
+                   </TextBox.InputBindings>
+               </TextBox>
+        </ContentControl>
+
+        <Button Grid.Row="0" Grid.Column="1" Command="{Binding ForceSearchCommand}"
+                Content="Search"
+                Width="100" Height="30" Margin="5"/>
+
+        <view:PictureCollection Grid.Row="1" Grid.ColumnSpan="2"
+                                DataContext="{Binding Pictures, Mode=OneWay}"/>
+    </Grid>
+</Window>
